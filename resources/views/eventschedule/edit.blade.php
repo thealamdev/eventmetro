@@ -1,0 +1,1 @@
+<x-app-layout><livewire:eventschedule.update-eventschedule /></x-app-layout>

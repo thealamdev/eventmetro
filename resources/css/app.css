@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-dashboard-active {
+    @apply font-body text-sm text-word-title font-semibold;
+}
+
+.text-dashboard-inactive {
+    @apply font-body text-sm text-word-paragraph font-medium;
+}
+
+.text-paragraph {
+    @apply font-body text-sm text-word-paragraph;
+}
+
+.text-button {
+    @apply font-body text-base text-word-paragraph;
+}
+
+.text-title {
+    @apply font-body text-base text-word-title font-medium;
+}

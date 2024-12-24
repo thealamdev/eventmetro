@@ -1,0 +1,1 @@
+<x-app-layout><livewire:faq.update-faq /></x-app-layout>

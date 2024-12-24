@@ -1,0 +1,32 @@
+[
+{"type":"header","version":"5.2.0","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"event_metro"},
+{"type":"table","name":"permissions","database":"event_metro","data":
+[
+{"id":"1","module_id":"1","name":"user view list","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"2","module_id":"1","name":"user create","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"3","module_id":"1","name":"user update","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"4","module_id":"1","name":"user delete","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"5","module_id":"1","name":"user restore","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"6","module_id":"1","name":"user force delete","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"7","module_id":"2","name":"role view list","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"8","module_id":"2","name":"role create","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"9","module_id":"2","name":"role update","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"10","module_id":"2","name":"role delete","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"11","module_id":"2","name":"role restore","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"12","module_id":"2","name":"role force delete","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"13","module_id":"3","name":"menu view list","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"14","module_id":"3","name":"menu create","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"15","module_id":"3","name":"menu update","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"16","module_id":"3","name":"menu delete","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"17","module_id":"3","name":"menu restore","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"18","module_id":"3","name":"menu force delete","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"19","module_id":"4","name":"module view list","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"20","module_id":"4","name":"module create","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"21","module_id":"4","name":"module update","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"22","module_id":"4","name":"module delete","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"23","module_id":"4","name":"module restore","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"},
+{"id":"24","module_id":"4","name":"module force delete","guard_name":"web","created_at":"2024-12-24 05:39:29","updated_at":"2024-12-24 05:39:29"}
+]
+}
+]

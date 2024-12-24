@@ -2,11 +2,14 @@
 
 namespace App\Livewire\Event;
 
-use App\Livewire\Forms\Event\Schedule\CreateForm;
+use App\Enums\Bucket;
 use App\Models\Event;
-use App\Models\EventSchedule;
 use Livewire\Component;
+use App\Local\FileStorage;
+use App\Models\EventSchedule;
 use Livewire\WithFileUploads;
+use App\Livewire\Forms\Event\Schedule\CreateForm;
+use App\Models\EventSpeaker;
 
 class CreateEventSchedule extends Component
 {
@@ -32,8 +35,12 @@ class CreateEventSchedule extends Component
 
     public function store(): void
     {
+
         $this->form->validate(rules: $this->form->rules(), attributes: $this->form->attributes());
         $isCreate = EventSchedule::create($this->form->contract($this->event->getKey()));
+        $speakers = $isCreate->speakers()->createMany($this->form->speakers());
+        $result = $this->form->images($speakers);
+        dd(FileStorage::stores(file: $result, path: Bucket::SPEAKER->value, model: EventSpeaker::class, key: $isCreate->getKey()));
         $response = $isCreate ? 'Event Schedule has been added' : 'Something went wrong';
         flash()->success($response);
         $this->mount();

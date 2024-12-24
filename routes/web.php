@@ -5,11 +5,6 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $iterator = json_decode(file_get_contents(database_path('backups/modules.json')))[2]->data;
-    foreach($iterator as $item){
-        dd($item);
-    }
-     dd(array_values($iterator));
     return view('welcome');
 });
 

@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Forms\Event\Schedule;
 
+use App\Models\EventSpeaker;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
@@ -14,10 +15,10 @@ class CreateForm extends Form
     public array $len = [];
 
     /**
-     * Define slot
+     * Define session
      * @var ?string
      */
-    public ?string $slot = null;
+    public ?string $session = null;
 
     /**
      * Summary of date
@@ -68,14 +69,20 @@ class CreateForm extends Form
     public ?string $zip = null;
 
     /**
+     * Define agenda
+     * @var ?string
+     */
+    public ?string $agenda = null;
+
+    /**
      * Define the validation rules
      * @return array
      */
     public function rules(): array
     {
         return [
-            'slot'              => ['required'],
-            'date'              => ['required'],
+            'session'           => ['required'],
+            'date'              => ['required', 'date'],
             'startTime'         => ['required'],
             'endTime'           => ['required'],
             'location'          => ['required'],
@@ -98,7 +105,7 @@ class CreateForm extends Form
     public function contract(?string $id): array
     {
         return [
-            'slot'      => $this->slot,
+            'session'   => $this->session,
             'event_id'  => $id,
             'date'      => $this->date,
             'start'     => $this->startTime,
@@ -108,9 +115,39 @@ class CreateForm extends Form
             'city'      => $this->city,
             'state'     => $this->state,
             'zip'       => $this->zip,
+            'agenda'    => $this->agenda,
         ];
     }
 
+    public function speakers()
+    {
+        return array_values($this->len);
+    }
+
+    public function images($speakers)
+    {
+        $images = collect($this->len)->values()->flatMap(fn($item) => [
+            'image' => $item['image'] ?? null,
+        ])->filter()->values();
+
+        // dd($images);
+        $result = collect($speakers)->map(function ($speaker, $index) use ($images) {
+            return [
+                'id' => $speaker['id'] ?? null,
+                'image' => $images[$index] ?? null,
+            ];
+        });
+
+        return $result->toArray();
+    }
+
+
+
+
+    /**
+     * Define the attributes
+     * @return array
+     */
     public function attributes(): array
     {
         return [

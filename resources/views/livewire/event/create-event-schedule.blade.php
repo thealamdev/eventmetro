@@ -13,11 +13,11 @@
             <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 mt-8 gap-4">
                 <div class="border border-base-500 p-6 rounded">
                     <div class="grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 sm:gap-1 md:gap-2">
-                        <x-forms.label for="form.slot" required="yes">
+                        <x-forms.label for="form.session" required="yes">
                             {{ __('Session') }}
                         </x-forms.label>
-                        <x-forms.text-input id="slot" placeholder="Enter Session name" wire:model="form.slot" type="text" dir="end" />
-                        <x-input-error :messages="$errors->get('form.slot')" class="mt-2" />
+                        <x-forms.text-input id="session" placeholder="Enter Session name" wire:model="form.session" type="text" dir="end" />
+                        <x-input-error :messages="$errors->get('form.session')" class="mt-2" />
                     </div>
                     <!-- Date and Time Section -->
                     <div class="grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 sm:gap-1 md:gap-2 mt-2">
@@ -122,9 +122,12 @@
                                 <div class="flex justify-end items-center mt-3">
                                     <div class="flex justify-end items-center">
                                         <div class="w-full flex justify-center">
-                                            <div class="relative overflow-hidden flex p-2 justify-center items-center text-center w-[80px] h-[80px] rounded-full bg-primary-700 cursor-pointer" onclick="document.getElementById('image_{{ $key }}').click()">
+                                            <div class="relative overflow-hidden flex p-2 justify-center items-center text-center w-[80px] h-[80px] rounded-full bg-primary-700 cursor-pointer" onclick="event.stopPropagation(); document.getElementById('image_{{ $key }}')">
                                                 <span class="text-paragraph">Add Photo</span>
                                                 <div class="absolute top-0 left-0 z-10">
+                                                    @if ($form->len[$key]['image'])
+                                                        <img src="{{ $form->len[$key]['image']->temporaryUrl() }}" class="w-full h-full" alt="">
+                                                    @endif
                                                 </div>
                                                 <input id="image_{{ $key }}" class="absolute opacity-0" wire:model="form.len.{{ $key }}.image" type="file" accept="image/*" />
                                             </div>

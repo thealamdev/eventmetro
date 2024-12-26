@@ -17,7 +17,7 @@
                             {{ __('Session') }}
                         </x-forms.label>
                         <x-forms.text-input id="session" placeholder="Enter Session name" wire:model="form.session" type="text" dir="end" />
-                        <x-input-error :messages="$errors->get('form.session')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('form.session')" class="mt-1" />
                     </div>
                     <!-- Date and Time Section -->
                     <div class="grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 sm:gap-1 md:gap-2 mt-2">
@@ -28,7 +28,7 @@
                             <x-forms.text-input-icon class="!pl-3" id="date" placeholder="Enter Date" wire:model="form.date" type="text" dir="end">
                                 <x-svg.calender />
                             </x-forms.text-input-icon>
-                            <x-input-error :messages="$errors->get('form.date')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('form.date')" class="mt-1" />
                         </div>
                         <div class="lg:col-span-1">
                             <x-forms.label style="opacity: 0;" for="form.startTime" required="yes">
@@ -37,7 +37,7 @@
                             <x-forms.text-input-icon class="!pl-3" id="startTime" placeholder="Start time" wire:model="form.startTime" type="text" dir="end">
                                 <x-svg.clock />
                             </x-forms.text-input-icon>
-                            <x-input-error :messages="$errors->get('form.startTime')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('form.startTime')" class="mt-1" />
                         </div>
                         <div class="lg:col-span-1">
                             <x-forms.label style="opacity: 0;" for="form.endTime" required="yes">
@@ -46,7 +46,7 @@
                             <x-forms.text-input-icon class="!pl-3" id="endTime" placeholder="End time" wire:model="form.endTime" type="text" dir="end">
                                 <x-svg.clock />
                             </x-forms.text-input-icon>
-                            <x-input-error :messages="$errors->get('form.endTime')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('form.endTime')" class="mt-1" />
                         </div>
                     </div>
 
@@ -58,24 +58,24 @@
                         <x-forms.text-input-icon class="!pl-3" id="location" wire:model="form.location" type="text" dir="end">
                             <x-svg.map />
                         </x-forms.text-input-icon>
-                        <x-input-error :messages="$errors->get('form.location')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('form.location')" class="mt-1" />
                     </div>
                     <div class="grid lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-1 lg:gap-6 md:gap-6 sm:gap-4 mt-2">
                         <div class="col-span-2">
                             <x-forms.text-input-icon class="!pl-3" id="street" placeholder="Street" wire:model="form.street" type="text" dir="end" />
-                            <x-input-error :messages="$errors->get('form.street')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('form.street')" class="mt-1" />
                         </div>
                         <div>
                             <x-forms.text-input-icon class="!pl-3" id="city" placeholder="City" wire:model="form.city" type="text" dir="end" />
-                            <x-input-error :messages="$errors->get('form.city')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('form.city')" class="mt-1" />
                         </div>
                         <div>
                             <x-forms.text-input-icon class="!pl-3" id="state" placeholder="State" wire:model="form.state" type="text" dir="end" />
-                            <x-input-error :messages="$errors->get('form.state')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('form.state')" class="mt-1" />
                         </div>
                         <div>
                             <x-forms.text-input-icon class="!pl-3" id="zip" placeholder="Zip" wire:model="form.zip" type="text" dir="end" />
-                            <x-input-error :messages="$errors->get('form.zip')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('form.zip')" class="mt-1" />
                         </div>
                     </div>
 
@@ -95,7 +95,7 @@
                             <div wire:ignore>
                                 <textarea wire:ignore cols="30" id="editor2" rows="10" wire:model='form.agenda' class="w-full py-3 text-base font-normal font-inter border border-slate-400 rounded" placeholder="Add agenda here.."></textarea>
                             </div>
-                            <x-input-error :messages="$errors->get('form.agenda')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('form.agenda')" class="mt-1" />
                         </div>
                     </div>
 
@@ -116,7 +116,7 @@
                                         Speaker
                                     </x-forms.label>
                                     <x-forms.text-input wire:model="form.len.{{ $key }}.speaker" />
-                                    <x-input-error :messages="$errors->get('form.len.' . $key . '.speaker')" class="mt-2" />
+                                    <x-input-error :messages="$errors->get('form.len.' . $key . '.speaker')" class="mt-1" />
                                 </div>
 
                                 <div class="flex justify-end items-center mt-3">
@@ -133,7 +133,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <x-input-error :messages="$errors->get('form.len.' . $key . '.image')" class="mt-2" />
+                                    <x-input-error :messages="$errors->get('form.len.' . $key . '.image')" class="mt-1" />
                                 </div>
                             </div>
 
@@ -143,7 +143,7 @@
                                         Speaker designation
                                     </x-forms.label>
                                     <x-forms.text-input wire:model="form.len.{{ $key }}.designation" />
-                                    <x-input-error :messages="$errors->get('form.len.' . $key . '.designation')" class="mt-2" />
+                                    <x-input-error :messages="$errors->get('form.len.' . $key . '.designation')" class="mt-1" />
                                 </div>
                             </div>
                             <div class="grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 sm:gap-1 md:gap-2 mt-2">
@@ -152,7 +152,7 @@
                                         Speaker bio
                                     </x-forms.label>
                                     <x-forms.text-input wire:model="form.len.{{ $key }}.bio" />
-                                    <x-input-error :messages="$errors->get('form.len.' . $key . '.bio')" class="mt-2" />
+                                    <x-input-error :messages="$errors->get('form.len.' . $key . '.bio')" class="mt-1" />
                                 </div>
                             </div>
                         </div>

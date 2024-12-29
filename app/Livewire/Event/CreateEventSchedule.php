@@ -35,12 +35,11 @@ class CreateEventSchedule extends Component
 
     public function store(): void
     {
-
         $this->form->validate(rules: $this->form->rules(), attributes: $this->form->attributes());
         $isCreate = EventSchedule::create($this->form->contract($this->event->getKey()));
         $speakers = $isCreate->speakers()->createMany($this->form->speakers());
         $result = $this->form->images($speakers);
-        dd(FileStorage::stores(file: $result, path: Bucket::SPEAKER->value, model: EventSpeaker::class, key: $isCreate->getKey()));
+        FileStorage::stores(files: $result, path: Bucket::SPEAKER->value, model: EventSpeaker::class, key: $isCreate->getKey());
         $response = $isCreate ? 'Event Schedule has been added' : 'Something went wrong';
         flash()->success($response);
         $this->mount();

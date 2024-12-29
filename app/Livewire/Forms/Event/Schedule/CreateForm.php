@@ -126,23 +126,20 @@ class CreateForm extends Form
 
     public function images($speakers)
     {
-        $images = collect($this->len)->values()->flatMap(fn($item) => [
-            'image' => $item['image'] ?? null,
-        ])->filter()->values();
+        $images = collect($this->len)
+            ->map(fn($item) => $item['image'] ?? null)
+            ->filter()
+            ->values();
 
-        // dd($images);
         $result = collect($speakers)->map(function ($speaker, $index) use ($images) {
             return [
                 'id' => $speaker['id'] ?? null,
-                'image' => $images[$index] ?? null,
+                'image' => $images->get($index),
             ];
         });
 
         return $result->toArray();
     }
-
-
-
 
     /**
      * Define the attributes

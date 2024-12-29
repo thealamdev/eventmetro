@@ -16,20 +16,22 @@ trait FileStorage
         return $isUpload ? self::process($isUpload) : false;
     }
 
-    public static function stores($file, $path, $model, $key)
+    public static function stores($files, $path, $model, $key)
     {
-        foreach ($file as $f) {
-            $f['image']->storeAs(path: $path, name: $f['image']->hashName(), options: 'public');
-            Image::create([
-                'image_type'    => $model,
-                'image_id'      => $f['id'],
-                'name'          => $f['image']->hashName(),
-                'path'          => $path,
-                'disk'          => Disk::LOCAL->value,
-                'url'           => asset('storage/' . $path . '/' . $f['image']->hashName()),
-                'mime'          => $f['image']->getClientOriginalExtension(),
-                'size'          => $f['image']->getSize(),
-            ]);
+        foreach ($files as $file) {
+            if ($file['image'] !== null) {
+                $file['image']->storeAs(path: $path, name: $file['image']->hashName(), options: 'public');
+                Image::create([
+                    'image_type'    => $model,
+                    'image_id'      => $file['id'],
+                    'name'          => $file['image']->hashName(),
+                    'path'          => $path,
+                    'disk'          => Disk::LOCAL->value,
+                    'url'           => asset('storage/' . $path . '/' . $file['image']->hashName()),
+                    'mime'          => $file['image']->getClientOriginalExtension(),
+                    'size'          => $file['image']->getSize(),
+                ]);
+            }
         }
     }
 

@@ -14,6 +14,10 @@ class Image extends Model
 
     protected $guarded = ['id'];
 
+    public static function create(array $array)
+    {
+    }
+
     /**
      * Define relation associate with Image model
      * @return MorphTo
